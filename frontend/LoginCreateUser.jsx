@@ -3,6 +3,7 @@
 
 var React = require('react');
 var PickCreateProject = require('./PickCreateProject.jsx');
+var NavBarLogin = require('./NavBarLogin.jsx');
 
 var LoginCreateUser = React.createClass({
   getInitialState: function() {
@@ -15,11 +16,14 @@ var LoginCreateUser = React.createClass({
         );
       } else {
       return (
-        <div className="container-fluid">
-          <h1>Hola</h1>
-          <input type='text' ref='userfield' placeholder='user'/>
-          <button onClick={this._submitNewUser}>create new user account</button>
-          <button onClick={this._loginAsUser}>login</button>
+        <div>
+          <NavBarLogin/>
+          <div id="logincreateuser" className="container-fluid">
+            <h1>Hola</h1>
+            <input type='text' ref='userfield' placeholder='user'/>
+            <button onClick={this._submitNewUser}>create new user account</button>
+            <button onClick={this._loginAsUser}>login</button>
+          </div>
         </div>
       );
     }
